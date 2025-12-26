@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Learning Outcome Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Student Learning Outcome Tracker</h1>
+      <p>Monitor • Analyze • Improve</p>
+    </header>
+
+    <div class="content">
+      <!-- LOGIN SECTION -->
+      <div id="loginSection" class="login-box">
+        <div class="card">
+          <h2>Teacher Login</h2>
+          <input type="text" id="teacherUser" placeholder="Username" />
+          <input type="password" id="teacherPass" placeholder="Password" />
+          <button onclick="teacherLogin()">Login</button>
+          <p class="info">Default: admin / admin123</p>
+        </div>
+
+        <div class="card">
+          <h2>Student Login</h2>
+          <input type="text" id="studentUser" placeholder="Student Name" />
+          <button onclick="studentLogin()">Login</button>
+          <p class="info">Enter your registered name</p>
+        </div>
+      </div>
+
+      <!-- TEACHER DASHBOARD -->
+      <div id="teacherDashboard" class="dashboard">
+        <h2>Teacher Dashboard</h2>
+        <input type="text" id="stuName" placeholder="Student Name" />
+        <input type="number" id="marks" placeholder="Marks (0 - 100)" />
+        <button onclick="addMarks()">Save Marks</button>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Marks</th>
+              <th>Performance</th>
+            </tr>
+          </thead>
+          <tbody id="teacherTable"></tbody>
+        </table>
+
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+
+      <!-- STUDENT DASHBOARD -->
+      <div id="studentDashboard" class="dashboard">
+        <h2>Student Dashboard</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Marks</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
